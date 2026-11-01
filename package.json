@@ -7,6 +7,8 @@
     "mag": "./bin/mag.js"
   },
   "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js",
     "ingest": "node bin/mag.js ingest",
     "scaffold": "node bin/mag.js scaffold",
     "audit": "node bin/mag.js audit",
@@ -25,6 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
+    "phaser": "^3.90.0",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
   }

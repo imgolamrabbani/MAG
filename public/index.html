@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="theme-color" content="#0d1117">
+  <title>MAG · The Elastic Bond</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#0d1117;color:#f0f6fc;font-family:system-ui,sans-serif;overflow:hidden}canvas{display:block;touch-action:none}
+    #welcome{position:fixed;inset:0;z-index:2000;background:radial-gradient(ellipse at 70% 30%,#12334d,#0d1117 65%);display:flex;align-items:center;justify-content:center;padding:24px}
+    article{max-width:700px}small{letter-spacing:.25em;color:#00e5ff}h1{font-size:clamp(36px,7vw,78px);line-height:1.03;margin:20px 0}h1 span{color:#ff9e1b}p{line-height:1.7;color:#a9b9c9}button{background:#00e5ff;border:0;border-radius:8px;padding:15px 24px;font-weight:800;cursor:pointer;color:#0d1117}input{padding:14px;border:1px solid #344757;background:#121c27;border-radius:8px;color:white;text-transform:uppercase;width:150px;margin-right:10px}
+    #status{position:fixed;top:52px;left:20px;pointer-events:none;font-size:13px;color:#b9d5e3;max-width:70%;text-shadow:0 2px 4px #000}
+    #help{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:#8ba9ba;pointer-events:none;white-space:nowrap}
+  </style>
+</head>
+<body>
+  <div id="welcome"><article><small>MAG / TWO PLAYERS. ONE CONNECTION.</small><h1>The <span>Elastic</span><br>Bond.</h1><p>An original procedural co-op platformer inspired by It Takes Two.<br>Pin obstacles as the Architect. Break through as the Catalyst.<br>Share a room link with a friend: every challenge needs both of you.</p><p>Three stages · elastic physics · synthesized sound · mobile controls</p><input id="room" aria-label="Room code" placeholder="Room code" maxlength="16"><button id="start">CONNECT & PLAY →</button><p id="error" role="alert"></p><p style="font-size:12px">A / D or arrows: move · Space: jump · E: skill · Q: tether/slingshot · H: heart<br>Use separate browsers/devices for two players. Landscape recommended.</p></article></div>
+  <div id="status" aria-live="polite"></div><div id="help">A D MOVE · SPACE JUMP · E SKILL · Q TETHER · H HEART</div>
+  <script src="/vendor/phaser.js"></script><script src="/socket.io/socket.io.js"></script>
+  <script src="/sdk/mag-audio-dsp.js"></script><script src="/sdk/mag-vfx-shaders.js"></script>
+  <script src="/sdk/mag-mobile-hud.js"></script><script src="/sdk/mag-net-sync.js"></script>
+  <script src="/game.js"></script>
+</body>
+</html>
