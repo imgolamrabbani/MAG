@@ -1,0 +1,37 @@
+{
+  "name": "antigravity-mag",
+  "version": "2.0.0",
+  "description": "Antigravity Master Autonomous Game-Replicator v2.0 — Serverless WebRTC P2P Co-op Game Deconstructor, Synthesizer, Dual-Gate Verifier & Zero-Cost GitHub Pages/Cloudflare Deployer",
+  "main": "bin/agy-mag.js",
+  "bin": {
+    "agy-mag": "./bin/agy-mag.js"
+  },
+  "scripts": {
+    "ingest": "node bin/agy-mag.js ingest",
+    "scaffold": "node bin/agy-mag.js scaffold",
+    "synthesize": "node bin/agy-mag.js synthesize",
+    "audit": "node bin/agy-mag.js audit",
+    "deploy": "node bin/agy-mag.js deploy",
+    "ship": "node bin/agy-mag.js ship",
+    "status": "node bin/agy-mag.js status"
+  },
+  "keywords": [
+    "antigravity",
+    "game-replicator",
+    "reverse-engineering",
+    "webrtc",
+    "peerjs",
+    "phaser3",
+    "webaudio-dsp",
+    "webgl-shaders",
+    "github-pages",
+    "autonomous-agent"
+  ],
+  "author": "Antigravity Systems Architecture",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  }
+}

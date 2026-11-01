@@ -1,0 +1,839 @@
+{
+  "schemaVersion": "2.0.0-ANTIGRAVITY",
+  "timestamp": "2026-11-01T04:46:10.182Z",
+  "target": "https://store.steampowered.com/app/1426210/It_Takes_Two/",
+  "gameId": 1426210,
+  "gameTitle": "It Takes Two",
+  "gameSlug": "it-takes-two",
+  "shortDescription": "Embark on the craziest journey of your life in It Takes Two. Invite a friend to join for free with Friend’s Pass and work together across a huge variety of gleefully disruptive gameplay challenges. Winner of GAME OF THE YEAR at the Game Awards 2021.",
+  "source": "LIVE_STEAM_STORE_API",
+  "detectedKeywords": [
+    "co-op",
+    "light"
+  ],
+  "hostingStrategy": {
+    "primary": "GitHub Pages (100% Free Static CDN + Automated gh CLI Deploy)",
+    "alternatives": [
+      "Cloudflare Pages (Unlimited Free Bandwidth via `npx wrangler pages deploy dist`)",
+      "Surge.sh (`npx surge dist`)",
+      "Vercel / Netlify Static Edge"
+    ],
+    "multiplayerTransport": "Serverless WebRTC P2P DataChannels (PeerJS Cloud Broker + Google/Twilio STUN + Local BroadcastChannel + AI Co-op Fallback)"
+  },
+  "subsystems": {
+    "physicsProfile": {
+      "solverEngine": "Phaser.Physics.Arcade + 12-Node Verlet Rope & Hooke Spring Solver",
+      "gravity": {
+        "x": 0,
+        "y": 900
+      },
+      "terminalVelocity": {
+        "x": 380,
+        "y": 860
+      },
+      "coyoteTimeMs": 150,
+      "jumpBufferMs": 130,
+      "airDragCoefficient": 0.06,
+      "verletRopeNodes": 12,
+      "verletConstraintIterations": 6,
+      "hookesLawTether": {
+        "equation": "F = -k * (dist - l0) - c * v_rel",
+        "springConstantK": 0.048,
+        "dampingConstantC": 0.026,
+        "naturalLength": 155,
+        "maxLength": 350,
+        "breakTensionThreshold": 500,
+        "slingshotImpulseMultiplier": 1.9
+      }
+    },
+    "visualProfile": {
+      "dominantPalette": {
+        "name": "Playful Amber & Azure",
+        "primaryP1": "#FF9E1B",
+        "secondaryP2": "#00B0FF",
+        "accentEnergy": "#00E676",
+        "bossCore": "#FF1744",
+        "backgroundDark": "#090D16",
+        "surfacePlatforms": "#1E293B",
+        "tetherGlow": "#38BDF8",
+        "textLight": "#F8FAFC"
+      },
+      "webglShaders": {
+        "bloomPostFX": {
+          "enabled": true,
+          "intensity": 1.25,
+          "threshold": 0.65
+        },
+        "chromaticAberration": {
+          "enabled": true,
+          "maxOffset": 0.0045
+        },
+        "vignetteScanline": {
+          "enabled": true,
+          "radius": 0.85,
+          "scanlineAlpha": 0.06
+        }
+      },
+      "proceduralTextures": [
+        "player_p1",
+        "player_p2",
+        "boss_core",
+        "platform_tile",
+        "moving_lift",
+        "switch_plate_off",
+        "switch_plate_on",
+        "energy_gate",
+        "particle_spark",
+        "heart_emote"
+      ],
+      "squashAndStretch": {
+        "jumpLaunch": {
+          "scaleX": 0.76,
+          "scaleY": 1.28,
+          "durationMs": 120
+        },
+        "groundLand": {
+          "scaleX": 1.32,
+          "scaleY": 0.72,
+          "durationMs": 140
+        }
+      }
+    },
+    "audioProfile": {
+      "engine": "Polyphonic WebAudio DSP Studio + Algorithmic Convolution Reverb",
+      "reverbDecaySec": 1.4,
+      "soundPresets": [
+        "jump",
+        "land",
+        "p1Ability",
+        "p2Ability",
+        "tetherSnap",
+        "switchActivate",
+        "gateOpen",
+        "bossHit",
+        "partnerBoop",
+        "victoryFanfare"
+      ],
+      "adaptiveSequencer": {
+        "tempoBpm": 114,
+        "tracks": [
+          "SUB_BASS",
+          "ARPEGGIATOR",
+          "PAD_CHORDS",
+          "PERCUSSION_HIHAT"
+        ],
+        "dynamicStates": [
+          "EXPLORATION",
+          "PUZZLE_TENSION",
+          "BOSS_FINALE"
+        ]
+      }
+    },
+    "asymmetricalCoop": {
+      "networkArchitecture": "Serverless WebRTC P2P DataChannel (PeerJS + STUN + BroadcastChannel Mirror + AI Autopilot)",
+      "roleP1": {
+        "roleId": "P1_ARCHITECT",
+        "roleTitle": "May (Kinetic Nail Anchor)",
+        "primaryAbility": "KINETIC_ANCHOR_AND_TETHER_LOCK",
+        "cooldownMs": 1800,
+        "description": "Anchors in place as a high-mass fulcrum for pendulum swings, deploys kinetic pads, and stabilizes tether."
+      },
+      "roleP2": {
+        "roleId": "P2_CATALYST",
+        "roleTitle": "Cody (Resonance Hammer Basher)",
+        "primaryAbility": "RESONANCE_DASH_AND_PULSE",
+        "cooldownMs": 1600,
+        "description": "Executes mid-air impulse dash, shatters energy barriers, and triggers remote resonance switches."
+      },
+      "autonomousAiPartner": {
+        "enabledByDefaultWhenSolo": true,
+        "SeamlessHumanHandoverOnWebRtcConnect": true,
+        "behaviors": [
+          "FOLLOW_PLAYER",
+          "SEEK_NEAREST_UNPRESSED_PLATE",
+          "AUTO_ANCHOR_NEAR_CHASM",
+          "ATTACK_BOSS_EXPOSED_CORE"
+        ]
+      }
+    },
+    "levelTopologyDag": {
+      "totalStages": 3,
+      "stages": [
+        {
+          "stageId": "STAGE_01_CALIBRATION",
+          "stageName": "Stage 1: It Takes Two — Tether Calibration & Dual Plates",
+          "width": 2400,
+          "height": 720,
+          "objective": "Depress both Pressure Plates (A & B) simultaneously to drop the Force Gate and reach the Warp Conduit.",
+          "puzzles": [
+            "DUAL_PRESSURE_INTERLOCK",
+            "CHASM_TETHER_SWING"
+          ],
+          "checkpointCount": 3
+        },
+        {
+          "stageId": "STAGE_02_CRUCIBLE",
+          "stageName": "Stage 2: It Takes Two — Synchronized Kinetic Crucible",
+          "width": 2600,
+          "height": 720,
+          "objective": "Use Kinetic Anchor + Resonance Dash across moving lifts and dual security relays to unlock the Ascent Portal.",
+          "puzzles": [
+            "MOVING_ELEVATOR_SYNC",
+            "HIGH_TENSION_SLINGSHOT"
+          ],
+          "checkpointCount": 3
+        },
+        {
+          "stageId": "STAGE_03_BOSS_FINALE",
+          "stageName": "Stage 3: It Takes Two — The Convergence Core Boss Finale",
+          "width": 2200,
+          "height": 720,
+          "objective": "Stand on flanking Overload Pads to drop the Boss Core shield, then strike the Core with Ability Pulses (3 Health Phases).",
+          "puzzles": [
+            "FLANKING_SHIELD_OVERLOAD",
+            "COOP_CORE_STRIKE_FINALE"
+          ],
+          "bossHealth": 100
+        }
+      ]
+    }
+  },
+  "obligations": [
+    {
+      "obligationId": "OBL-VIS-001",
+      "category": "VISUAL_SHADERS",
+      "title": "10-Asset Procedural High-DPI Canvas Texture Factory",
+      "description": "Generate player_p1, player_p2, boss_core, platform_tile, moving_lift, switch plates, energy_gate, spark, and heart textures in canvas.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "generateProceduralTextures.*player_p1.*boss_core.*energy_gate"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-vfx-pipeline.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.711Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-VIS-002",
+      "category": "VISUAL_SHADERS",
+      "title": "Custom WebGL Post-FX Shader Pipeline (Bloom & Chromatic)",
+      "description": "Implement WebGL fragment shader post-processing pipeline or glow/aberration FX controller.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "BloomPostFX|fragmentShader|applyPostFXPipeline"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.713Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-VIS-003",
+      "category": "VISUAL_SHADERS",
+      "title": "Multi-Node Verlet Catenary Rope & Tension Renderer",
+      "description": "Simulate and render a 12-node Verlet rope chain between P1 and P2 with tension color gradients.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "renderVerletTether.*verletNodes"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-vfx-pipeline.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.713Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-VIS-004",
+      "category": "VISUAL_SHADERS",
+      "title": "Squash-and-Stretch & Additive Camera Trauma",
+      "description": "Provide tweened character deformation on jump/land and quadratic camera shake decay.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "applySquashStretch.*triggerCameraTrauma"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.713Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-VIS-005",
+      "category": "VISUAL_SHADERS",
+      "title": "Multi-Layer Parallax Background & Particle Emitter",
+      "description": "Render 3-depth scrolling parallax layers and procedural particle bursts + floating heart emotes.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "createParallaxBackground.*spawnParticleBurst.*spawnFloatingEmote"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.714Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-PHY-001",
+      "category": "PHYSICS_VERLET",
+      "title": "Hooke's Law Spring & Damping Constraint Solver",
+      "description": "Compute spring tension force F = -k * (dist - l0) - c * v_rel between tethered players.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "solveTetherPhysics.*springConstantK.*dampingConstantC"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-net-p2p.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.715Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-PHY-002",
+      "category": "PHYSICS_VERLET",
+      "title": "12-Node Verlet Rope Integration & Relaxation",
+      "description": "Run iterative distance constraint relaxation across intermediate rope nodes with gravity sag.",
+      "targetComponent": "dist/sdk/agy-vfx-pipeline.js",
+      "verificationRule": {
+        "pattern": "stepVerletRope.*iterations"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-vfx-pipeline.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-vfx-pipeline.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.715Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-PHY-003",
+      "category": "PHYSICS_VERLET",
+      "title": "Coyote Time & Jump Buffer Grace Windows",
+      "description": "Enforce 150ms coyote ledge grace timer and 130ms pre-land jump input buffer.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "coyoteTimer.*jumpBufferTimer"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.715Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-PHY-004",
+      "category": "PHYSICS_VERLET",
+      "title": "Anchor Fulcrum & Kinetic Slingshot Impulse",
+      "description": "When P1 activates Kinetic Anchor, P1 mass locks and P2 receives a 1.9x slingshot boost.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "isAnchored.*slingshotImpulse"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.716Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-PHY-005",
+      "category": "PHYSICS_VERLET",
+      "title": "Moving Platform Velocity Inheritance & Clamp",
+      "description": "Configure arcade gravity, max velocity clamping, and moving elevator platform support.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "setMaxVelocity.*movingPlatforms"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.716Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-AUD-001",
+      "category": "AUDIO_POLY_DSP",
+      "title": "Hardware WebAudio Graph & Algorithmic Convolution Reverb",
+      "description": "Initialize AudioContext, master compressor/gain, and algorithmic impulse-response ConvolverNode.",
+      "targetComponent": "dist/sdk/agy-audio-studio.js",
+      "verificationRule": {
+        "pattern": "createConvolver.*buildImpulseResponse"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-audio-studio.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-audio-studio.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.716Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-AUD-002",
+      "category": "AUDIO_POLY_DSP",
+      "title": "Tactile Jump, Land & White-Noise Impact Envelopes",
+      "description": "Synthesize exponential pitch-sweep jumps and low-pass filtered noise bursts on ground impact.",
+      "targetComponent": "dist/sdk/agy-audio-studio.js",
+      "verificationRule": {
+        "pattern": "playJump.*playLand.*exponentialRampToValueAtTime"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-audio-studio.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-audio-studio.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.717Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-AUD-003",
+      "category": "AUDIO_POLY_DSP",
+      "title": "Asymmetrical Role Ability & Boss Impact Synthesis",
+      "description": "Synthesize distinct waveforms for P1 Anchor, P2 Resonance Dash, and Boss Core hits.",
+      "targetComponent": "dist/sdk/agy-audio-studio.js",
+      "verificationRule": {
+        "pattern": "playP1Ability.*playP2Ability.*playBossHit"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-audio-studio.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-audio-studio.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.717Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-AUD-004",
+      "category": "AUDIO_POLY_DSP",
+      "title": "4-Track Adaptive Procedural Soundtrack Sequencer",
+      "description": "Run a 4-track synthesizer (Sub-Bass, Arp, Pad, Hi-Hat) with dynamic state transitions (Exploration/Tension/Boss).",
+      "targetComponent": "dist/sdk/agy-audio-studio.js",
+      "verificationRule": {
+        "pattern": "startAdaptiveMusic.*setMusicIntensity"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.717Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-AUD-005",
+      "category": "AUDIO_POLY_DSP",
+      "title": "Puzzle Switch Triad, Gate Unlock & Victory Fanfare",
+      "description": "Synthesize harmonic triads for pressure plates, sweeping chords for gates, and 5-note victory fanfare.",
+      "targetComponent": "dist/sdk/agy-audio-studio.js",
+      "verificationRule": {
+        "pattern": "playSwitchActivate.*playGateOpen.*playVictoryFanfare"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-audio-studio.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-audio-studio.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.718Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-P2P-001",
+      "category": "WEBRTC_P2P_NET",
+      "title": "Serverless WebRTC DataChannel P2P Engine (PeerJS + STUN)",
+      "description": "Connect P1 Host and P2 Client directly over WebRTC DataChannels using deterministic room IDs without a backend server.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "Peer.*iceServers.*stun\\.l\\.google\\.com"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/sdk/agy-net-p2p.js",
+          "public/sdk/agy-net-p2p.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.719Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-P2P-002",
+      "category": "WEBRTC_P2P_NET",
+      "title": "BroadcastChannel Same-Device Dual-Tab Instant Mirror",
+      "description": "Provide zero-latency BroadcastChannel transport alongside WebRTC so two browser tabs on one machine sync instantly.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "BroadcastChannel.*mag_p2p_"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-net-p2p.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.719Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-P2P-003",
+      "category": "WEBRTC_P2P_NET",
+      "title": "3rd-Peer Intrusion Guard (ROOM_FULL Rejection)",
+      "description": "Reject any 3rd connection attempt to an occupied 2-player P2P session with an explicit ROOM_FULL packet.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "ROOM_FULL"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/p2p-bot-harness.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.719Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-P2P-004",
+      "category": "WEBRTC_P2P_NET",
+      "title": "30Hz Snapshot Interpolation Buffer (Hermite/Linear Lerp)",
+      "description": "Buffer incoming P2P state frames and smoothly interpolate remote partner coordinates.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "getInterpolatedPartner.*remoteSnapshots"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-net-p2p.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.720Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-P2P-005",
+      "category": "WEBRTC_P2P_NET",
+      "title": "Session Token Persistence & Visibility Auto-Reconnect",
+      "description": "Persist session identity in localStorage and automatically recover P2P link when returning from mobile background.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "visibilitychange.*reclaimSession"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-net-p2p.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-net-p2p.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.720Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-MOB-001",
+      "category": "MOBILE_PWA_UX",
+      "title": "4-Pointer Multi-Touch Input Registration",
+      "description": "Register addPointer(4) in Phaser to handle simultaneous thumbstick, jump, ability, and tether actions.",
+      "targetComponent": "dist/sdk/agy-mobile-pwa-hud.js",
+      "verificationRule": {
+        "pattern": "addPointer\\(4\\)"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-mobile-pwa-hud.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-mobile-pwa-hud.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.720Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-MOB-002",
+      "category": "MOBILE_PWA_UX",
+      "title": "Floating/Fixed Virtual Analog Thumbstick with Deadzone",
+      "description": "Implement left-screen virtual thumbstick with deadzone smoothing and normalized vector output.",
+      "targetComponent": "dist/sdk/agy-mobile-pwa-hud.js",
+      "verificationRule": {
+        "pattern": "joystick.*deadzone.*updateJoystickPosition"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-mobile-pwa-hud.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-mobile-pwa-hud.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.721Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-MOB-003",
+      "category": "MOBILE_PWA_UX",
+      "title": "5-Button Ergonomic Action Cluster (Jump, Skill, Tether, Boop, AI Mode)",
+      "description": "Render color-coded tactile touch buttons for Jump, Role Skill, Tether Lock, Partner Boop, and AI Call.",
+      "targetComponent": "dist/sdk/agy-mobile-pwa-hud.js",
+      "verificationRule": {
+        "pattern": "btnJump.*btnAbility.*btnTether.*btnBoop.*btnAiCommand"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-mobile-pwa-hud.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-mobile-pwa-hud.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.721Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-MOB-004",
+      "category": "MOBILE_PWA_UX",
+      "title": "In-Game Shareable Invite Modal + SVG QR Code Generator",
+      "description": "Provide 1-tap Share Link button and procedural QR/Room Code overlay for instant mobile co-op pairing.",
+      "targetComponent": "dist/sdk/agy-mobile-pwa-hud.js",
+      "verificationRule": {
+        "pattern": "copyInviteLink.*showInviteModal"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/sdk/agy-mobile-pwa-hud.js",
+          "src/engine/deconstructor-v2.js",
+          "src/sdk/agy-mobile-pwa-hud.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.722Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-MOB-005",
+      "category": "MOBILE_PWA_UX",
+      "title": "Installable PWA Manifest & Offline Service Worker",
+      "description": "Generate manifest.json and sw.js service worker for full-screen mobile home-screen installation.",
+      "targetComponent": "dist/manifest.json + dist/sw.js",
+      "verificationRule": {
+        "pattern": "standalone.*landscape|CACHE_NAME"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/manifest.json",
+          "dist/sw.js",
+          "src/engine/deconstructor-v2.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.722Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-GAM-001",
+      "category": "COOP_AI_AND_DAG",
+      "title": "Autonomous Co-op AI Partner Bot with Seamless Human Handover",
+      "description": "Provide an intelligent AI Partner controller for P2 when solo that automatically hands over control when a human joins via P2P.",
+      "targetComponent": "dist/sdk/agy-net-p2p.js",
+      "verificationRule": {
+        "pattern": "computeAiPartnerStep.*SEEK_PLATE.*FOLLOW"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "src/engine/deconstructor-v2.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.723Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-GAM-002",
+      "category": "COOP_AI_AND_DAG",
+      "title": "Simultaneous Dual Pressure Plate & Force-Gate State Machine",
+      "description": "Open stage barrier gates only when Plate A and Plate B are depressed concurrently.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "plateA.*plateB.*gateOpen"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.723Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-GAM-003",
+      "category": "COOP_AI_AND_DAG",
+      "title": "3-Stage Level Topology DAG & Stage Transitions",
+      "description": "Implement full progression across Stage 1 (Calibration), Stage 2 (Crucible), and Stage 3 (Boss Finale).",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "STAGE_01_CALIBRATION.*STAGE_02_CRUCIBLE.*STAGE_03_BOSS_FINALE"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.723Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-GAM-004",
+      "category": "COOP_AI_AND_DAG",
+      "title": "Multi-Phase Co-op Boss Encounter (Shield Overload & Core Strike)",
+      "description": "Implement Stage 3 Boss with shield generators that require cooperative overload before damaging the Boss Core.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "bossCore.*bossShieldDown.*bossHealth"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.724Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    },
+    {
+      "obligationId": "OBL-GAM-005",
+      "category": "COOP_AI_AND_DAG",
+      "title": "Out-of-Bounds Checkpoint Respawn & Partner High-Five Boop",
+      "description": "Safely respawn players at active checkpoints on hazard/abyss contact and broadcast partner heart boops.",
+      "targetComponent": "dist/game.js",
+      "verificationRule": {
+        "pattern": "respawnAtCheckpoint.*triggerPartnerBoop"
+      },
+      "status": "VERIFIED",
+      "evidence": {
+        "gate": "GATE_A_STATIC_AST_V2",
+        "matchedFiles": [
+          "dist/game.js",
+          "src/engine/deconstructor-v2.js",
+          "src/engine/synthesizer.js"
+        ],
+        "verifiedAt": "2026-11-01T04:47:16.724Z"
+      },
+      "lastAuditedAt": "2026-11-01T04:47:16.725Z"
+    }
+  ],
+  "deployment": {
+    "provider": "GITHUB_PAGES",
+    "repoUrl": "https://github.com/imgolamrabbani/mag-it-takes-two",
+    "baseUrl": "https://imgolamrabbani.github.io/mag-it-takes-two/",
+    "liveUrl": "https://imgolamrabbani.github.io/mag-it-takes-two/?room=ITTA",
+    "roomCode": "ITTA",
+    "deployedAt": "2026-11-01T04:47:37.042Z"
+  }
+}

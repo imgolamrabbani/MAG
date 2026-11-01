@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>It Takes Two — Co-op WebRTC Replica</title>
+  <link rel="manifest" href="./manifest.json" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: #090D16;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #F8FAFC;
+    }
+    #game-container { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+    #controls-legend {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%);
+      background: rgba(9, 13, 22, 0.82); border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 5px 14px; border-radius: 999px; font-size: 11px; color: #94A3B8;
+      pointer-events: none; z-index: 50; white-space: nowrap;
+    }
+    #controls-legend b { color: #38BDF8; }
+  </style>
+  <!-- Phaser 3.80 & PeerJS 1.5 (Serverless WebRTC DataChannels) -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="controls-legend">
+    <b>It Takes Two</b> | <b>WASD / Arrows</b> Move & Jump | <b>E / Space</b> Ability (May (Kinetic Nail Anchor) / Cody (Resonance Hammer Basher)) | <b>Q</b> Anchor Tether | <b>B</b> Partner Boop | <b>R</b> Stage Skip
+  </div>
+
+  <!-- Antigravity MAG v2.0 Runtime SDKs -->
+  <script src="./sdk/agy-audio-studio.js"></script>
+  <script src="./sdk/agy-vfx-pipeline.js"></script>
+  <script src="./sdk/agy-mobile-pwa-hud.js"></script>
+  <script src="./sdk/agy-net-p2p.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

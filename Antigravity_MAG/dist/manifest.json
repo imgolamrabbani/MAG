@@ -1,0 +1,10 @@
+{
+  "name": "It Takes Two — Antigravity WebRTC Replica",
+  "short_name": "It Takes Two",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#090D16",
+  "theme_color": "#FF9E1B",
+  "icons": []
+}
