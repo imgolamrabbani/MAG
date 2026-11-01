@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "timestamp": "2026-11-01T04:07:49.441Z",
+  "timestamp": "2026-11-01T04:28:17.954Z",
   "target": "https://store.steampowered.com/app/1426210/It_Takes_Two/",
   "gameId": 1426210,
   "gameTitle": "It Takes Two",
@@ -620,9 +620,9 @@
             "line": 426
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.118Z"
+        "timestamp": "2026-11-01T04:31:31.996Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-VIS-002",
@@ -679,9 +679,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.122Z"
+        "timestamp": "2026-11-01T04:31:32.000Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-VIS-003",
@@ -722,9 +722,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.124Z"
+        "timestamp": "2026-11-01T04:31:32.001Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-VIS-004",
@@ -765,9 +765,9 @@
             "line": 200
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.125Z"
+        "timestamp": "2026-11-01T04:31:32.002Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-VIS-005",
@@ -792,7 +792,15 @@
             "line": 1
           },
           {
+            "file": "public/game.js",
+            "line": 1
+          },
+          {
             "file": "public/sdk/mag-vfx-shaders.js",
+            "line": 1
+          },
+          {
+            "file": "public/game.js",
             "line": 1
           },
           {
@@ -808,9 +816,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.126Z"
+        "timestamp": "2026-11-01T04:31:32.004Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-PHY-001",
@@ -835,12 +843,20 @@
             "line": 247
           },
           {
+            "file": "public/game.js",
+            "line": 1
+          },
+          {
             "file": "public/sdk/mag-net-sync.js",
             "line": 247
           },
           {
             "file": "bin/mag.js",
             "line": 63
+          },
+          {
+            "file": "public/game.js",
+            "line": 1
           },
           {
             "file": "public/sdk/mag-net-sync.js",
@@ -855,9 +871,9 @@
             "line": 247
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.127Z"
+        "timestamp": "2026-11-01T04:31:32.006Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-PHY-002",
@@ -878,13 +894,21 @@
             "line": 50
           },
           {
+            "file": "public/game.js",
+            "line": 30
+          },
+          {
+            "file": "public/game.js",
+            "line": 30
+          },
+          {
             "file": "src/engine/deconstructor.js",
             "line": 50
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.128Z"
+        "timestamp": "2026-11-01T04:31:32.007Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-PHY-003",
@@ -905,13 +929,21 @@
             "line": 519
           },
           {
+            "file": "public/game.js",
+            "line": 45
+          },
+          {
+            "file": "public/game.js",
+            "line": 45
+          },
+          {
             "file": "src/engine/deconstructor.js",
             "line": 519
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.129Z"
+        "timestamp": "2026-11-01T04:31:32.008Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-PHY-004",
@@ -932,13 +964,33 @@
             "line": 61
           },
           {
+            "file": "public/game.js",
+            "line": 114
+          },
+          {
+            "file": "public/index.html",
+            "line": 17
+          },
+          {
+            "file": "public/game.js",
+            "line": 114
+          },
+          {
+            "file": "public/index.html",
+            "line": 17
+          },
+          {
+            "file": "server.js",
+            "line": 127
+          },
+          {
             "file": "src/engine/deconstructor.js",
             "line": 61
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.130Z"
+        "timestamp": "2026-11-01T04:31:32.010Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-AUD-001",
@@ -979,9 +1031,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.132Z"
+        "timestamp": "2026-11-01T04:31:32.012Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-AUD-002",
@@ -1022,9 +1074,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.134Z"
+        "timestamp": "2026-11-01T04:31:32.015Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-AUD-003",
@@ -1049,8 +1101,16 @@
             "line": 1
           },
           {
+            "file": "public/game.js",
+            "line": 211
+          },
+          {
             "file": "public/sdk/mag-audio-dsp.js",
             "line": 1
+          },
+          {
+            "file": "public/game.js",
+            "line": 211
           },
           {
             "file": "public/sdk/mag-audio-dsp.js",
@@ -1065,9 +1125,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.136Z"
+        "timestamp": "2026-11-01T04:31:32.017Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-AUD-004",
@@ -1088,13 +1148,21 @@
             "line": 586
           },
           {
+            "file": "public/game.js",
+            "line": 1
+          },
+          {
+            "file": "public/game.js",
+            "line": 1
+          },
+          {
             "file": "src/engine/deconstructor.js",
             "line": 586
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.137Z"
+        "timestamp": "2026-11-01T04:31:32.018Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-AUD-005",
@@ -1135,9 +1203,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.139Z"
+        "timestamp": "2026-11-01T04:31:32.020Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-NET-001",
@@ -1151,36 +1219,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 614
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 614
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.140Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_01_HANDSHAKE_ROLES",
+        "details": "P1 assigned P1_ARCHITECT, P2 assigned P2_CATALYST. Distinct: true"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.412Z"
     },
     {
       "obligationId": "OBL-NET-002",
@@ -1194,28 +1237,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 145
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 624
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 145
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 624
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.141Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_02_INTRUSION_REJECTION",
+        "details": "Intruder correctly rejected with error code: ROOM_FULL"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.413Z"
     },
     {
       "obligationId": "OBL-NET-003",
@@ -1229,92 +1255,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 28
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 44
-          },
-          {
-            "file": "src/sdk/mag-audio-dsp.js",
-            "line": 160
-          },
-          {
-            "file": "src/sdk/mag-mobile-hud.js",
-            "line": 138
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 21
-          },
-          {
-            "file": "src/sdk/mag-vfx-shaders.js",
-            "line": 301
-          },
-          {
-            "file": "public/sdk/mag-audio-dsp.js",
-            "line": 160
-          },
-          {
-            "file": "public/sdk/mag-mobile-hud.js",
-            "line": 138
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 21
-          },
-          {
-            "file": "public/sdk/mag-vfx-shaders.js",
-            "line": 301
-          },
-          {
-            "file": "public/sdk/mag-audio-dsp.js",
-            "line": 160
-          },
-          {
-            "file": "public/sdk/mag-mobile-hud.js",
-            "line": 138
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 21
-          },
-          {
-            "file": "public/sdk/mag-vfx-shaders.js",
-            "line": 301
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 28
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 44
-          },
-          {
-            "file": "src/sdk/mag-audio-dsp.js",
-            "line": 160
-          },
-          {
-            "file": "src/sdk/mag-mobile-hud.js",
-            "line": 138
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 21
-          },
-          {
-            "file": "src/sdk/mag-vfx-shaders.js",
-            "line": 301
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.143Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_03_STATE_SYNC_20HZ",
+        "details": "Received valid partner snapshot: x=250, y=400"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.414Z"
     },
     {
       "obligationId": "OBL-NET-004",
@@ -1328,44 +1273,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 1
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 653
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 1
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 653
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.145Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_06_GRACE_PERIOD_RECONNECT",
+        "details": "Session reclaimed with original role: P1_ARCHITECT"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.417Z"
     },
     {
       "obligationId": "OBL-MOB-001",
@@ -1406,9 +1318,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.147Z"
+        "timestamp": "2026-11-01T04:31:32.029Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-MOB-002",
@@ -1449,9 +1361,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.149Z"
+        "timestamp": "2026-11-01T04:31:32.031Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-MOB-003",
@@ -1492,9 +1404,9 @@
             "line": 35
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.150Z"
+        "timestamp": "2026-11-01T04:31:32.032Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-MOB-004",
@@ -1535,9 +1447,9 @@
             "line": 1
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.152Z"
+        "timestamp": "2026-11-01T04:31:32.034Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-GAM-001",
@@ -1551,44 +1463,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 239
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 336
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 1
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 239
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 336
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 1
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.154Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_04_PUZZLE_GATE_INTERLOCK",
+        "details": "Puzzle gate successfully triggered: GATE_01_A"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.415Z"
     },
     {
       "obligationId": "OBL-GAM-002",
@@ -1609,13 +1488,21 @@
             "line": 254
           },
           {
+            "file": "public/game.js",
+            "line": 212
+          },
+          {
+            "file": "public/game.js",
+            "line": 212
+          },
+          {
             "file": "src/engine/deconstructor.js",
             "line": 254
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.154Z"
+        "timestamp": "2026-11-01T04:31:32.037Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-GAM-003",
@@ -1629,44 +1516,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 260
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 748
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 122
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 122
-          },
-          {
-            "file": "public/sdk/mag-net-sync.js",
-            "line": 122
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 260
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 748
-          },
-          {
-            "file": "src/sdk/mag-net-sync.js",
-            "line": 122
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.156Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_05_PARTNER_BOOP_BROADCAST",
+        "details": "Boop received from sender: P1_ARCHITECT"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.416Z"
     },
     {
       "obligationId": "OBL-GAM-004",
@@ -1691,12 +1545,24 @@
             "line": 1
           },
           {
-            "file": "public/sdk/mag-audio-dsp.js",
-            "line": 1
+            "file": "public/game.js",
+            "line": 105
           },
           {
             "file": "public/sdk/mag-audio-dsp.js",
             "line": 1
+          },
+          {
+            "file": "public/game.js",
+            "line": 105
+          },
+          {
+            "file": "public/sdk/mag-audio-dsp.js",
+            "line": 1
+          },
+          {
+            "file": "server.js",
+            "line": 147
           },
           {
             "file": "src/engine/deconstructor.js",
@@ -1705,11 +1571,15 @@
           {
             "file": "src/sdk/mag-audio-dsp.js",
             "line": 1
+          },
+          {
+            "file": "test/server.test.js",
+            "line": 49
           }
         ],
-        "timestamp": "2026-11-01T04:08:15.158Z"
+        "timestamp": "2026-11-01T04:31:32.040Z"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.042Z"
     },
     {
       "obligationId": "OBL-GAM-005",
@@ -1723,28 +1593,11 @@
       },
       "status": "VERIFIED",
       "evidence": {
-        "verifiedBy": "GATE_A_STATIC_AST_AUDITOR",
-        "matches": [
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 329
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 311
-          },
-          {
-            "file": "src/engine/bot-harness.js",
-            "line": 329
-          },
-          {
-            "file": "src/engine/deconstructor.js",
-            "line": 311
-          }
-        ],
-        "timestamp": "2026-11-01T04:08:15.158Z"
+        "verifiedBy": "GATE_B_BOT_HARNESS",
+        "testId": "TEST_07_OUT_OF_BOUNDS_RESPAWN",
+        "details": "Safe respawn triggered at checkpoint: (220, 520)"
       },
-      "lastAuditedAt": "2026-11-01T04:08:15.159Z"
+      "lastAuditedAt": "2026-11-01T04:31:32.418Z"
     }
   ]
 }
